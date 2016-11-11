@@ -5,6 +5,9 @@ package com.igyapap;
  */
 public class Main {
     public static void main(String[] args) {
-
+        ITelephone igorsPhone = new DeskPhone(12345678);
+        igorsPhone.powerOn();
+        igorsPhone.callPhone(12345678);
+        igorsPhone.answer();
     }
 }
