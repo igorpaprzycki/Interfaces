@@ -3,29 +3,35 @@ package com.igyapap;
 /**
  * Created by igypap on 11.11.16.
  */
-public class DeskPhone implements Telephone {
+public class MobilePhone implements Telephone {
     private int myNumber;
     private boolean isRinging;
+    private boolean isOn = false;
 
-    public DeskPhone(int myNumber) {
+    public MobilePhone(int myNumber) {
         this.myNumber = myNumber;
     }
 
     @Override
     public void powerOn() {
-
-        System.out.println("No action taken. Desk phone does not have a power button");
+        isOn = true;
+        System.out.println("Mobile phone powered on");
     }
 
     @Override
     public void dial(int phoneNumber) {
-        System.out.println("Now ringing " + phoneNumber + " on desk phone");
+        if(isOn){
+            System.out.println("Now ringing " + phoneNumber + " on desk phone");
+        }else{
+            System.out.println("Phone is switched off");
+        }
+
     }
 
     @Override
     public void answer() {
         if (isRinging) {
-            System.out.println("Answering the desk phone");
+            System.out.println("Answering the mobile phone");
             isRinging = false;
         }
     }
